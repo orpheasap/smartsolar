@@ -10,7 +10,7 @@
 - Raspberry Pi Zero Wireless (16 €)
 - Αισθητήρας θερμοκρασίας DS18B20 (2 €)
 - Καλώδια, αντιστάσεις κλπ (~ 5  €)
--Power Supply 5V 2.5A - Raspberry Pi (10 €)
+- Power Supply 5V 2.5A - Raspberry Pi (10 €)
 συνολικό κόστος: ~33 €
 
 ## Εργαλεία και λογισμικό
