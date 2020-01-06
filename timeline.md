@@ -17,6 +17,6 @@ We bought the following:
 ## 6/1/2020
 - To send the sensor's readings from the raspberry pi to another device we are using the [mqtt protocol](https://mqtt.org), wich is a protocol that makes communication between devices through network easier.
 - We installed the following mqtt implementations for raspberry pi:
-  - the mosquito broker, by typing in the terminal: `sudo apt install mosquitto`
+  - the mosquito broker, by typing in the terminal: `sudo apt install mosquitto`.
   - and the mosquito clients, by typing in the terminal: `sudo apt-get install mosquitto-clients`.
 - Then we wrote a C program which publishes the sensor's readings to the broker. The source code can be seen [here](../master/code/temp_mqtt.c).
