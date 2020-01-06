@@ -16,4 +16,4 @@ We bought the following:
 
 ## 6/1/2020
 - We installed the mosquito broker, by typing in the terminal: sudo apt install mosquitto, and the mosquito client, typing in the terminal: sudo apt-get install mosquitto-clients.
-- Then we wrote a C program which publishes the sensor's readings to the broker. You can see the program [here](../master/code/temp_mqtt.c).
+- Then we wrote a C program which publishes the sensor's readings to the broker. The source code can be seen [here](../master/code/temp_mqtt.c).
