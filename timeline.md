@@ -12,4 +12,8 @@ We bought the following:
 - Then we wrote a C program, based on https://www.raspberrypi.org/forums/viewtopic.php?t=70709, to read the sensor readings. 
 - We made some changes to the C program so that it converts the readings of the sensor, which are in character mode, into actual numbers. The source code can be seen [here](../master/code/temp.c)
 - This is a screenshot of the program output while running:
-![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/1st_prog_prtsc.png "hahah")
+![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/1st_prog_prtsc.png "PrtSc taken on the raspberry pi")
+
+## 6/1/2020
+- We installed the mosquito broker, by typing in the terminal: sudo apt install mosquitto, and the mosquito client, typing in the terminal: sudo apt-get install mosquitto-clients.
+- Then we wrote a C program which publishes the sensor's readings to the broker. You can see the program here.
