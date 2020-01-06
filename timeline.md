@@ -20,3 +20,4 @@ We bought the following:
   - the mosquito broker, by typing in the terminal: `sudo apt install mosquitto`.
   - and the mosquito clients, by typing in the terminal: `sudo apt-get install mosquitto-clients`.
 - Then we wrote a C program which publishes the sensor's readings to the broker. The source code can be seen [here](../master/code/temp_mqtt.c).
+- Now the raspberry pi can send the sensor's readings to other devices through network. Here is a screenshot of an other computer receiving the sensor's readings: ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/mqtt_receive.png "PrtSc taken on an other computer")
