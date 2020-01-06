@@ -15,7 +15,7 @@ We bought the following:
 ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/1st_prog_prtsc.png "PrtSc taken on the raspberry pi")
 
 ## 6/1/2020
-- To conect the raspberry pi to another divice we are using the [mqtt protocol](https://mqtt.org), wich is a protocol that makes communication between devices through internet easier.
+- To send the sensor's readings from the raspberry pi to another divice we are using the [mqtt protocol](https://mqtt.org), wich is a protocol that makes communication between devices through the network easier.
 - We installed two mqtt implementations:
   - one called mosquito, by typing in the terminal: `sudo apt install mosquitto`
   - and one callwd mosquito client, by typing in the terminal: `sudo apt-get install mosquitto-clients`.
