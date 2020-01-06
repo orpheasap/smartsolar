@@ -15,5 +15,5 @@ We bought the following:
 ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/1st_prog_prtsc.png "PrtSc taken on the raspberry pi")
 
 ## 6/1/2020
-- We installed the mosquito broker, by typing in the terminal: sudo apt install mosquitto, and the mosquito client, typing in the terminal: sudo apt-get install mosquitto-clients.
+- We installed the mosquito broker, by typing in the terminal: sudo apt install mosquitto, and the mosquito client, by typing in the terminal: sudo apt-get install mosquitto-clients.
 - Then we wrote a C program which publishes the sensor's readings to the broker. The source code can be seen [here](../master/code/temp_mqtt.c).
