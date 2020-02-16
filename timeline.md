@@ -26,4 +26,5 @@ The command `mosquitto_sub -h 192.168.1.14 -t temp` subscribes to the raspberry 
 
 ## 2/2/2020
 We installed the sensor in the solar heater using some silicon to secure it in place. The sensor was placed inside of a thermowell as you can see in the following picture: ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/IMG_20200202_170847.jpg "photo taken while istalling the sensor")
-Then we used a long, 3-wire cable to conect the sensor, in the heater, to the rasberry pi wich is located in a room one floor benith the solar heater.
+Then we used a long, 3-wire cable to conect the sensor, in the heater, to the rasberry pi wich is located in a room one floor benith the solar heater. In order to conect the wire to the rasbperry pi easier we created a bracket. In the following pictures you can see the schematic and photos of the bracket: ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/schematic1.png "the shcematic was created in fritzing")
+![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/bracketcollage.png "photos taken during the building process of the bracket")
