@@ -25,4 +25,4 @@ We bought the following:
 The command `mosquitto_sub -h 192.168.1.14 -t temp` subscribes to the raspberry pi (ip = 192.168.1.14) and reads the the temperature from the mqtt topic "temp".
 
 ## 2/2/2020
-We installed the sensor in the solar heater using some silicon to secure it in place. The sensor was placed inside of a thermowell as you can see in the following picture.
+We installed the sensor in the solar heater using some silicon to secure it in place. The sensor was placed inside of a thermowell as you can see in the following picture: ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/IMG_20200202_170847.jpg "photo taken while istalling the sensor")
