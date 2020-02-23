@@ -35,6 +35,7 @@ The command `mosquitto_sub -h 192.168.1.14 -t temp` subscribes to the raspberry 
 
 ## 10/2/2020
 The main focus of the project is to create an aplication where we can wacth the temprature of the solarheater and a diagram of some previous readings. The app will be created on the [appinventor platform](http://appinventor.mit.edu/). In order to connect the app inventor platform with the mqtt broker, we are using the capability of appinventor to run javascript via an html website[html website](https://el.wikipedia.org/wiki/HTML). To achieve a connection between javascript and mqtt, we have to use websockets. The mosquitto broker is not regulary running with websockets enabled, so we have to activate them.
-- In order to activate the websockets, we edited the mosquitto configuration file mosquitto.conf using the comand `sudo nano /etc/mosquitto/mosquitto.conf` and aded the two following lines: `listener 9001` and `protocol websockets`.
+- In order to activate the websockets, we edited the mosquitto configuration file mosquitto.conf using the comand `sudo nano /etc/mosquitto/mosquitto.conf` and aded the two following lines: `listener 9001` and `protocol websockets`. Some information on how to activate websockets we found on the site: https://www.sitepoint.com/community/t/basic-javascript-example-using-mosquitto-mqtt/308792.
+-
 
 
