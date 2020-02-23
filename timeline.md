@@ -30,5 +30,5 @@ The command `mosquitto_sub -h 192.168.1.14 -t temp` subscribes to the raspberry 
 ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/bracketcollage.png "photos taken during the building process of the bracket")
 
 ## 9/2/2020
-- We wrote a C program, wich makes a string that contains temprature readings from the past 3 ouhrs. Every 15 minutes the program places a new reading in the string, deleting 12th one, and publishes the string with the topic `-t temp_chart`. So the string contains 12 readings(starting with the latest one). The source code can be found [here](../master/code/temp_mqtt.c).
+- We wrote a C program, wich makes a string that contains temprature readings from the past 3 ouhrs. Every 15 minutes the program places a new reading in the string, deleting 12th one, and publishes the string with the topic `-t temp_chart`. So the string contains 12 readings(starting with the latest one). The source code can be found [here](../master/code/temp_mqtt_chart.c).
 
