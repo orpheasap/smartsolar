@@ -33,3 +33,7 @@ The command `mosquitto_sub -h 192.168.1.14 -t temp` subscribes to the raspberry 
 - We extended the C program temp_mqtt.c, which makes a string that contains temperature readings from the past 3 hours. Every 15 minutes the program places a new reading in the string, deleting 12th one, and publishes the string on the mqtt briker to the topic `-t temp_chart`. So the string contains 12 readings(starting with the latest one). The source code can be found [here](../master/code/temp_mqtt_chart.c).
 - We also made the pi to run the program at startup, following the instructions for the first method(rc.local) illustrated on this website:https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/. When editing rc.local, in order to run the executable program temp_mqtt(wich is the executable program of the temp_mqtt_chart.c) at startup, we added the line `sudo home/pi/Documents/temp_mqtt &` before the line `exit 0`. 
 
+## 10/2/2020
+The main focus of the project is to create an aplication where we can wacth the temprature of the solarheater and a diagram of some previous readings. The app will be created on the [appinventor platform](http://appinventor.mit.edu/). In order to connect the app inventor platform with the mqtt broker, we are using capability of appinventor to run javascript via an html website[html website](https://el.wikipedia.org/wiki/HTML). To achieve a connection between javascript and mqtt, we have to use websockets. The mosquitto broker is not regulary running with websockets enabled, so we have to activate them.
+
+
