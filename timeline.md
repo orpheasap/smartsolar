@@ -37,5 +37,11 @@ The command `mosquitto_sub -h 192.168.1.14 -t temp` subscribes to the raspberry 
 The main focus of the project is to create an aplication where we can wacth the temprature of the solarheater and a diagram of some previous readings. The app will be created on the [appinventor platform](http://appinventor.mit.edu/). In order to connect the app inventor platform with the mqtt broker, we are using the capability of appinventor to run javascript via an html website[html website](https://el.wikipedia.org/wiki/HTML). To achieve a connection between javascript and mqtt, we have to use websockets. The mosquitto broker is not regulary running with websockets enabled, so we have to activate them.
 - In order to activate the websockets, we edited the mosquitto configuration file mosquitto.conf using the comand `sudo nano /etc/mosquitto/mosquitto.conf` and aded the two following lines: `listener 9001` and `protocol websockets`. Some information on how to activate websockets we found on the site: https://www.sitepoint.com/community/t/basic-javascript-example-using-mosquitto-mqtt/308792.
 - Our 1st html file, is based on the one, illustreated on this website: https://internetofhomethings.com/homethings/?p=1317. The source code for our html file can be found here [here](../master/code/smartsolar1.html). It subscribes to the mqtt topic `-t temp` and reads the messages published on the topic. 
+- Our 2nd html file, is almost identical to the first one. The only difference is that it subscribes to the mqtt topic `-t temp_chart`, and reads the messege, wich is a string with 12 readings with one space between them. The source code can be found here. 
+
+## 15/2/2020
+The app, must be able to run both html files. To achieve that we incleded two screens, wich can be swhitched between with one button at the top of the screen. Each screen cheks if there has been a new messege published in the mqtt topic, every number of seconds. 
+- The first screen connects to the first html file, and posts the new reading on a label.
+- The second screen connects to the second html file. When it recieves the new reading(every 15min.) it splits it at spaces and creates an array of strings. The 12th string of the array contains the latest reading, the 11th contains the reading wich was taken 15 minutes befor the latest one, and so on... 
 
 
