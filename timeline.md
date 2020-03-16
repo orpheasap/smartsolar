@@ -45,5 +45,7 @@ The app, must be able to run both html files. To achieve that we incleded two sc
 - The second screen connects to the second html file. When it recieves the new reading(every 15min.) it splits it at spaces and creates an array of 12 strings. The 12th string of the array contains the latest reading, the 11th contains the reading wich was taken 15 minutes befor the latest one, and so on... Then it creates a diagram with 11 lines. Each line's ends represent a sensor reading.
    - The horizontlal axis is devided in 12 poits. At the zero of the axis, there is the reading taken 3 hours before the latest one and on the end of the axis there is the latest reading.
    - The vertical axis is devided in 100 points. Each point represents a number of °C(ranging from 0-100).
+- Below can see a screenshot off the second screen of the app, running on a phone:
+![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/Screenshot_2020-03-16-14-36-57-186_edu.mit.appinventor.aicompanion3.jpg "Screenshot taken on phone")
 
 
