@@ -42,6 +42,8 @@ The main focus of the project is to create an aplication where we can wacth the 
 ## 15/2/2020
 The app, must be able to run both html files. To achieve that we incleded two screens, wich can be swhitched between with one button at the top of the screen. Each screen cheks if there has been a new messege published in the mqtt topic, every number of seconds. 
 - The first screen connects to the first html file, and posts the new reading on a label.
-- The second screen connects to the second html file. When it recieves the new reading(every 15min.) it splits it at spaces and creates an array of strings. The 12th string of the array contains the latest reading, the 11th contains the reading wich was taken 15 minutes befor the latest one, and so on... 
+- The second screen connects to the second html file. When it recieves the new reading(every 15min.) it splits it at spaces and creates an array of 12 strings. The 12th string of the array contains the latest reading, the 11th contains the reading wich was taken 15 minutes befor the latest one, and so on... Then it creates a diagram with 11 lines. Each line's ends represent a sensor reading.
+   - The horizontlal axis is devided in 12 poits. At the zero of the axis, there is the reading taken 3 hours before the latest one and on the end of the axis there is the latest reading.
+   - The vertical axis is devided in 100 points. Each point represents a number of °C(ranging from 0-100).
 
 
