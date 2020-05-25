@@ -5,7 +5,7 @@
 #include <string.h>
 #include <fcntl.h>
 
-#include "temp_3.h"
+#include "linear_regression.h"
 
 #define SIZE 1
 #define NUMELEM 74
