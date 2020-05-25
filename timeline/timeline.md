@@ -10,7 +10,7 @@ We bought the following:
 ## 28/12/2019
 - We conected the DS18B20 to the raspberry pi, following the instractions on http://www.circuitbasics.com/raspberry-pi-ds18b20-temperature-sensor-tutorial/. 
 - Then we wrote a C program, based on https://www.raspberrypi.org/forums/viewtopic.php?t=70709, to read the sensor readings. 
-- We made some changes to the C program so that it converts the readings of the sensor, which are in character mode, into actual numbers. The source code can be seen [here](../master/timeline/code/temp.c)
+- We made some changes to the C program so that it converts the readings of the sensor, which are in character mode, into actual numbers. The source code can be seen [here](../timeline/code/temp.c)
 - This is a screenshot of the program output while running:
 ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/1st_prog_prtsc.png "PrtSc taken on the raspberry pi")
 
@@ -19,7 +19,7 @@ We bought the following:
 - We installed the following mqtt implementations for raspberry pi:
   - the mosquito broker, by typing in the terminal: `sudo apt install mosquitto`.
   - and the mosquito clients, by typing in the terminal: `sudo apt-get install mosquitto-clients`.
-- Then we wrote a C program which publishes the sensor's readings to the broker. The source code can be seen [here](../master/timeline/code/temp_mqtt.c).
+- Then we wrote a C program which publishes the sensor's readings to the broker. The source code can be seen [here](../timeline/code/temp_mqtt.c).
 - Now the raspberry pi can send the sensor's readings to other devices through network. Here is a screenshot of an other computer, in wich we have installed the mosquitto clients, receiving the sensor's readings: ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/mqtt_receive.png "PrtSc taken on an other computer")
 
 The command `mosquitto_sub -h 192.168.1.14 -t temp` subscribes to the raspberry pi (ip = 192.168.1.14) and reads the the temperature from the mqtt topic "temp".
@@ -30,14 +30,14 @@ The command `mosquitto_sub -h 192.168.1.14 -t temp` subscribes to the raspberry 
 ![alt text](https://github.com/protogelrafinas/smartsolar/blob/master/photos/bracketcollage.png "photos taken during the building process of the bracket")
 
 ## 9/2/2020
-- We extended the C program temp_mqtt.c, which makes a string that contains temperature readings from the past 3 hours. Every 15 minutes the program places a new reading in the string, deleting 12th one, and publishes the string on the mqtt briker to the topic `-t temp_chart`. So the string contains 12 readings(starting with the latest one). The source code can be found [here](../master/timeline/code/temp_mqtt_chart.c).
+- We extended the C program temp_mqtt.c, which makes a string that contains temperature readings from the past 3 hours. Every 15 minutes the program places a new reading in the string, deleting 12th one, and publishes the string on the mqtt briker to the topic `-t temp_chart`. So the string contains 12 readings(starting with the latest one). The source code can be found [here](../timeline/code/temp_mqtt_chart.c).
 - We also made the pi to run the program at startup, following the instructions for the first method(rc.local) illustrated on this website:https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/. When editing rc.local, in order to run the executable program temp_mqtt(wich is the executable program of the temp_mqtt_chart.c) at startup, we added the line `sudo home/pi/Documents/temp_mqtt &` before the line `exit 0`. 
 
 ## 10/2/2020
 The main focus of the project is to create an aplication where we can wacth the temprature of the solarheater and a diagram of some previous readings. The app will be created on the [appinventor platform](http://appinventor.mit.edu/). In order to connect the app inventor platform with the mqtt broker, we are using the capability of appinventor to run javascript via an html website[html website](https://el.wikipedia.org/wiki/HTML). To achieve a connection between javascript and mqtt, we have to use websockets. The mosquitto broker is not regulary running with websockets enabled, so we have to activate them.
 - In order to activate the websockets, we edited the mosquitto configuration file mosquitto.conf using the comand `sudo nano /etc/mosquitto/mosquitto.conf` and aded the two following lines: `listener 9001` and `protocol websockets`. Some information on how to activate websockets we found on the site: https://www.sitepoint.com/community/t/basic-javascript-example-using-mosquitto-mqtt/308792.
-- Our 1st html file, is based on the one, illustreated on this website: https://internetofhomethings.com/homethings/?p=1317. The source code for our html file can be found here [here](../master/timeline/code/smartsolar1.html). It subscribes to the mqtt topic `-t temp` and reads the messages published on the topic. 
-- Our 2nd html file, is almost identical to the first one. The only difference is that it subscribes to the mqtt topic `-t temp_chart`, and reads the messege, wich is a string containing 12 readings with one space between them. The source code can be found [here](../master/timeline/code/smartsolar2.html). 
+- Our 1st html file, is based on the one, illustreated on this website: https://internetofhomethings.com/homethings/?p=1317. The source code for our html file can be found here [here](../timeline/code/smartsolar1.html). It subscribes to the mqtt topic `-t temp` and reads the messages published on the topic. 
+- Our 2nd html file, is almost identical to the first one. The only difference is that it subscribes to the mqtt topic `-t temp_chart`, and reads the messege, wich is a string containing 12 readings with one space between them. The source code can be found [here](../timeline/code/smartsolar2.html). 
 
 ## 15/2/2020
 The app, must be able to run both html files. To achieve that we incleded two screens, wich can be swhitched between with one button at the top of the screen. Each screen cheks if there has been a new messege published in the mqtt topic, every number of seconds. 
