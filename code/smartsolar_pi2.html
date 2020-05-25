@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title>Websockets Using JavaScript MQTT Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+ 
+
+  </head>
+  <body onload="MQTTconnect();">
+    <h1>Websockets Using JavaScript MQTT Client</h1>
+
+	<div id="status">Connection Status: Not Connected</div>
+	<div id="value">Value: - </div>
+	<div id="timestmp">Time: - </div>
+	
+		<!-- mosquitto MQTT -------------------------------------------------------------------->
+		<script type="text/javascript" src="http://test.mosquitto.org/mosquitto.js"></script>
+
+   <script type = "text/javascript">
+
+	//Set Default MQTT Url ------------------------------------------------------------->
+	var mqtturl = "ws://192.168.1.14:9001";
+	var rxtopic = "temp_chart";
+
+	// Create MQTT client instance ----------------------------------------------------->
+	client = new Mosquitto();
+	client.run = 0;
+	//executes once after window is loaded --------------------------------------------->
+			function MQTTconnect() {
+                document.getElementById("status").innerHTML = "Connecting ...";
+				client.connect(mqtturl);   // Connect to MQTT broker
+			}
+
+			// Callback executed upon MQTT broker connection ----------------------------------->
+			client.onconnect = function(rc){
+				document.getElementById("status").innerHTML = "Connected.";
+				client.subscribe(rxtopic, 0);
+			};
+			// Callback executed upon MQTT broker disconnection -------------------------------->
+			client.ondisconnect = function(rc){
+				document.getElementById("status").innerHTML = "Disconnected. Reconnecting ...";
+				client.connect(mqtturl);
+			};
+			// Callback executed upon receipt of MQTT message ---------------------------------->
+			client.onmessage = function(topic, payload, qos){
+				var d = new Date();
+				document.getElementById("value").innerHTML = "Value: " + payload;
+				document.getElementById("timestmp").innerHTML = "Time: " + d.toLocaleTimeString();
+				if (window.AppInventor!=null) window.AppInventor.setWebViewString(payload);
+			};
+			
+
+
+    </script>
+
+  </body>
+</html>
+
